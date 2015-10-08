@@ -1,0 +1,19 @@
+{
+  "name": "deco7350_InTheKnow",
+  "version": "0.0.0",
+  "description": "\"polymer\":\"Polymer/polymer#^1.1.0\"",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.1.0"
+  }
+}
