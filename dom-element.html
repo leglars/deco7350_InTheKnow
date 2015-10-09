@@ -1,0 +1,26 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="dom-element">
+
+    <template>
+        <style>
+            div {
+                display: inline-block;
+                background-color: bisque;
+                border-radius: 8px;
+                padding: 4px;
+            }
+
+        </style>
+
+        <div>
+            <content></content>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: "dom-element"
+        });
+    </script>
+</dom-module>
