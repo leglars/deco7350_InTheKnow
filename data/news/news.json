@@ -1,27 +1,59 @@
 [
   {
-    "id": 1,
-    "title" : "Have you heard about the Web Components revolution?",
-    "author" : "Eric",
-    "description" : "../images/avatar-01.svg",
-    "publishTime": "2015/10/9",
-    "order": 1,
-    "mainPhoto": "url",
-    "textImages": [
-              "url", "url", "url"
-              ],
-    "publisher": {
-              "name" : "BBC",
-              "logo" : "url"
-              },
-    "category" : "Economic",
-    "fullText" : "....",
-    "vote" : {
-              "like" : 0,
-              "dislike" : 0
-              },
-    "comments" : "url"
-
+    "issue": "web firmwork",
+    "category": "Economic",
+    "articles": [
+      {
+        "id": 1,
+        "title": "Have you heard about the Web Components revolution?",
+        "author": "Eric",
+        "description": "../images/avatar-01.svg",
+        "publishTime": "2015/10/9",
+        "order": 1,
+        "mainPhoto": "url",
+        "textImages": [
+          "url",
+          "url",
+          "url"
+        ],
+        "publisher": {
+          "name": "BBC",
+          "logo": "url"
+        },
+        "fullText": "....",
+        "vote": {
+          "like": 0,
+          "dislike": 0
+        },
+        "comments": "url"
+      },
+      {
+        "id": 1,
+        "title": "Have you heard about the Web Components revolution?",
+        "author": "Eric",
+        "description": "../images/avatar-01.svg",
+        "publishTime": "2015/10/9",
+        "order": 1,
+        "mainPhoto": "url",
+        "textImages": [
+          "url",
+          "url",
+          "url"
+        ],
+        "publisher": {
+          "name": "BBC",
+          "logo": "url"
+        },
+        "fullText": "....",
+        "vote": {
+          "like": 0,
+          "dislike": 0
+        },
+        "comments": "url"
+      }
+    ]
+  },
+  {
 
   }
 ]
