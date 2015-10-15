@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32b20aaf-fcca-4d2d-9831-693780a237c8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/header/main-header.html" afterPath="$PROJECT_DIR$/components/header/main-header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/main.css" afterPath="$PROJECT_DIR$/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/The_Cross_and_Rows,_Chester,_Cheshire,_England,_ca._1895.jpg" />
     </list>
     <ignored path="deco7350_InTheKnow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +46,8 @@
       <file leaf-file-name="main-header.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/header/main-header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22192152">
-              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.6887686">
+              <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -383,7 +381,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444881240643</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="main-header element">
+      <created>1444884457909</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1444884457909</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -447,7 +451,8 @@
     <MESSAGE value="change news data file structure:&#10;issue&#10;   --- articles" />
     <MESSAGE value="A bad practice" />
     <MESSAGE value="restart the project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="restart the project structure" />
+    <MESSAGE value="main-header element" />
+    <option name="LAST_COMMIT_MESSAGE" value="main-header element" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -716,8 +721,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/header/main-header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22192152">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.6887686">
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
           <folding />
         </state>
       </provider>
