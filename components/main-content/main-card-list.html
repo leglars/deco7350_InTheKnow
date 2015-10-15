@@ -1,0 +1,185 @@
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+<link rel="import" href="main-article-card.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+
+<link rel="stylesheet" href="../../styles/main.css">
+
+<dom-module id="main-card-list">
+    <template>
+        <style is="custom-style">
+            body {
+                background-color: var(--paper-grey-50);
+                padding: 0px;
+            }
+
+            .cards {
+            @apply(--layout-vertical);
+            @apply(--center-justified);
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 10px;
+            }
+
+            paper-card {
+                width: 100%;
+                margin-bottom: 16px;
+            }
+
+            .avatar {
+                display: inline-block;
+                height: 64px;
+                width: 64px;
+                border-radius: 50%;
+                background: var(--paper-pink-500);
+                color: white;
+                line-height: 64px;
+                font-size: 30px;
+                text-align: center;
+            }
+
+            .fancy .title {
+                position: absolute;
+                top: 30px;
+                left: 100px;
+                color: var(--paper-indigo-500);
+            }
+
+            .fancy img {
+                width: 100%;
+            }
+
+            .fancy .big {
+                font-size: 22px;
+                padding: 8px 0 16px;
+                color: var(--google-grey-500);
+            }
+
+            .fancy .medium {
+                font-size: 16px;
+                padding-bottom: 8px;
+            }
+
+            .pink {
+                --paper-card-header-color: var(--paper-pink-500);
+            }
+        </style>
+
+
+        <div class="cards">
+
+            <main-article-card heading="Titles AND images!" class="pink"
+                               image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </main-article-card>
+
+        </div>
+
+        <div class="cards">
+
+            <main-article-card heading="Titles AND images!" class="pink"
+                               image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </main-article-card>
+
+        </div>
+
+
+        <div class="cards">
+
+            <main-article-card heading="Titles AND images!" class="pink"
+                               image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </main-article-card>
+
+        </div>
+
+
+        <div class="cards">
+
+            <main-article-card heading="Titles AND images!" class="pink"
+                               image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </main-article-card>
+
+        </div>
+
+
+        <div class="cards">
+
+            <main-article-card heading="Titles AND images!" class="pink"
+                               image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </main-article-card>
+
+        </div>
+
+
+        <div class="cards">
+
+            <main-article-card heading="Titles AND images!" class="pink"
+                               image="http://placehold.it/350x150">
+                <div class="card-content">
+                    Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+                </div>
+                <div class="card-actions">
+                    <paper-button>No</paper-button>
+                    <paper-button>Yes</paper-button>
+                </div>
+            </main-article-card>
+
+        </div>
+
+
+
+
+    </template>
+
+    <script>
+        (function() {
+            Polymer({
+                is:"main-card-list",
+
+                properties: {
+
+                }
+            })
+        }) ();
+    </script>
+
+</dom-module>
