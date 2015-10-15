@@ -12,3 +12,35 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
+
+paper-header-panel {
+  float: left;
+  height: 500px;
+@apply(--shadow-elevation-1dp);
+}
+
+.paper-header {
+  height: 60px;
+  font-size: 16px;
+  line-height: 60px;
+  padding: 0 10px;
+  color: white;
+  background-color: black;
+  transition: height 0.2s;
+}
+
+.paper-header.tall {
+  height: 120px;
+}
+
+.content {
+  height: 2000px;
+}
+
+.green .paper-header {
+  background-color: var(--paper-green-500);
+}
+
+.green .content {
+  background: linear-gradient(white, #c8e6c9);
+}
