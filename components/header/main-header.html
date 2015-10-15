@@ -7,21 +7,46 @@
 <dom-module id="main-header">
     <template>
         <style>
+            :root {
+                --transparency-color: rbga(0, 0, 0, 0);
+                --text-white-color: #FFF;
+            }
+
             :host {
                 display: block;
             }
 
             paper-toolbar {
                 --paper-toolbar-background: rbga(0, 0, 0, 0);
-
+                --paper-toolbar-color: white;
+                z-index: 10;
             }
+
+            paper-tabs {
+                --paper-tabs-selection-bar-color: -text-white-color;
+                /*color: #000000;*/
+            }
+
+            #background {
+                background-image: url("../../images/The_Cross_and_Rows,_Chester,_Cheshire,_England,_ca._1895.jpg");
+                background-position: top;
+                background-size: cover;
+                height: 600px;
+            }
+
         </style>
 
 
-        <div>
-            <paper-toolbar>
-
+        <div id="background">
+            <paper-toolbar justify="end">
+                <paper-tabs selected="0" noink>
+                    <paper-tab>Home</paper-tab>
+                    <paper-tab>About</paper-tab>
+                    <paper-tab>Donate</paper-tab>
+                    <paper-tab>Join Us</paper-tab>
+                </paper-tabs>
             </paper-toolbar>
+
         </div>
 
     </template>
