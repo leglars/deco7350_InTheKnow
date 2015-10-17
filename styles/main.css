@@ -7,11 +7,25 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
+
+.wrapper{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #F5F5F5;
+}
+
+
 body {
-  background: #fafafa;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+  color: white;
   margin: 0;
+
+}
+
+#indexBody{
+  overflow: hidden;
 }
 
 paper-header-panel {
@@ -25,7 +39,7 @@ paper-header-panel {
   font-size: 16px;
   line-height: 60px;
   padding: 0 10px;
-  color: white;
+  color: rgba(255, 255, 255, 0);
   background-color: black;
   transition: height 0.2s;
 }
@@ -44,4 +58,93 @@ paper-header-panel {
 
 .green .content {
   background: linear-gradient(white, #c8e6c9);
+}
+
+#video{
+
+  width: auto;
+}
+
+video #bgvid {
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+
+  min-height: 100%;
+
+
+  height: auto;
+
+  z-index: -100;
+
+  /*background: url(polina.jpg) no-repeat;*/
+
+  background-size: cover;
+
+}
+
+
+#logoImg{
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1000;
+
+
+}
+
+.mask{
+  position: absolute;
+  right: 0;
+
+
+
+
+  min-height: 100%;
+
+  height: 100%;
+  width: 100%;
+
+  z-index: 100;
+
+  /*background: url(polina.jpg) no-repeat;*/
+
+  background-color: rgba(40, 48, 78, 0.16);
+
+}
+
+.btn-outline{
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.joingame{
+  font-size: 2em;
+  padding: 15px 30px;
+  margin-bottom: 50px;
+
+  transition: all 0.4s ease;
+  color: #FFFFFF;
+}
+a.joingame:link{
+  color: #FFFFFF;
+}
+
+a.joingame:visited{
+  color: #FFFFFF;
+}
+
+a.joingame:hover{
+  background: #F5F5F5;
+  border-color: #F5F5F5;
+  color: #4F4F4F;
+  transition: all 0.4s ease;
+}
+
+.enterButton{
+  text-align: center;
 }
