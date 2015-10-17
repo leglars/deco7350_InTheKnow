@@ -1,0 +1,112 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/webcomponentsjs/webcomponents.min.js">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="top-toolbar">
+    <template>
+        <style>
+            :host {
+                display: block;
+                z-index: 99;
+            }
+
+            paper-toolbar {
+                --paper-toolbar-background: rbga(0, 0, 0, 0);
+                --paper-toolbar-color: white;
+            }
+
+            paper-tabs {
+                --paper-tabs-selection-bar-color: white;
+                color: white;
+                font-size: 18px;
+            }
+
+            .leftIcon {
+                float: left;
+                height: 64px;
+                margin-left: 10px;
+                display: table;
+            }
+
+            .middle {
+                display:table-cell;
+                vertical-align:middle;
+            }
+
+            paper-icon-button.huge {
+                width: 48px;
+                height: 48px;
+                --paper-icon-button-ink-color: var(--paper-indigo-500);
+            }
+
+            paper-icon-button.white {
+                color: white;
+            }
+
+
+
+        </style>
+
+
+            <div class="leftIcon">
+
+                <template is="dom-if" if="{{showBack}}">
+                    <paper-icon-button icon="arrow-back" alt="arrow-back" title="arrow-back" class="huge white middle"></paper-icon-button>
+                </template>
+
+
+                <template is="dom-if" if="{{showLogo}}">
+                    <p>In The Know <span>{{isshowback}}</span></p>
+                </template>
+
+            </div>
+
+        <paper-toolbar justify="end">
+
+            <paper-tabs selected="0" noink no-bar>
+                <paper-tab>Home</paper-tab>
+                <paper-tab>About</paper-tab>
+                <paper-tab>Donate</paper-tab>
+                <paper-tab>Join Us</paper-tab>
+                <paper-tab disabled></paper-tab>
+                <paper-tab>Sign up</paper-tab>
+                <paper-tab>Log in</paper-tab>
+            </paper-tabs>
+        </paper-toolbar>
+
+
+    </template>
+
+    <script>
+        (function() {
+            Polymer({
+                is:"top-toolbar",
+
+                properties: {
+                    isshowback: {
+                        type: String,
+                        value: "no"
+                    }
+                },
+
+                showBack: false,
+                showLogo: true,
+
+                ready: function() {
+                    if(this.isshowback == "yes") {
+                        this.showBack = true;
+                        this.showLogo = false
+                    }
+                }
+
+
+            })
+        }) ();
+    </script>
+
+</dom-module>
