@@ -1,0 +1,63 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/webcomponentsjs/webcomponents.min.js">
+<link rel="import" href="main-article-card.html">
+
+<dom-module id="article-container">
+    <template>
+        <style>
+            .articleContainer {
+                max-width: 960px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            @media (max-width: 1020px) {
+                .articleContainer {
+                    margin: 0 30px;
+                }
+            }
+
+            .card {
+                margin: 0 80px;
+            }
+
+            .article {
+                padding: 24px 36px;
+            }
+
+            @media (max-width: 620px) {
+                .articleContainer {
+                    min-width: 480px;
+                }
+
+                .card {
+                    margin: 0 14%;
+                    transition: all 0.1s ease-in-out;
+                    -webkit-transition: all 0.1s ease-in-out;
+                    -moz-transition: all 0.1s ease-in-out;
+                    -o-transition: all 0.1s ease-in-out;
+                }
+            }
+        </style>
+
+        <div class="articleContainer">
+            <main-article-card class="card">
+                <div class="article">
+                    <content></content>
+                </div>
+            </main-article-card>
+        </div>
+    </template>
+    <script>
+        (function() {
+            Polymer ({
+                is: "article-container",
+
+                properties: {
+
+                }
+            });
+        }) ();
+    </script>
+</dom-module>
