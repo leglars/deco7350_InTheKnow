@@ -28,13 +28,13 @@
 
         <div>
             <iron-image src={{imagesrc}} fade sizing="cover">
-                <template is="dom-if" if="">
+                <top-toolbar isshowback={{showback}}></top-toolbar>
+                <template is="dom-if" if="{{showTitle}}">
                     <div class="newsTitle">
                         <news-title logosrc={{logosrc}} title={{newstitle}}></news-title>
                     </div>
                 </template>
 
-                <top-toolbar isshowback={{showback}}></top-toolbar>
 
             </iron-image>
         </div>
@@ -55,7 +55,21 @@
 
                     logosrc: String,
 
-                    newstitle: String
+                    newstitle: String,
+
+                    showtitle: {
+                        type: String,
+                        value: "no"
+                    }
+
+                },
+
+                showTitle: false,
+
+                ready: function () {
+                    if (this.showtitle == "yes") {
+                        this.showTitle = true
+                    }
                 }
             })
         }) ();
