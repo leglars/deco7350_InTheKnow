@@ -1,0 +1,78 @@
+
+<link rel="import" href="top-toolbar.html">
+<link rel="import" href="news-title.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="header-panel">
+    <template>
+        <style>
+            :host {
+                height: 500px;
+                width: auto;
+            }
+
+            iron-image {
+                height: 500px;
+                width: 100%;
+                min-width: 540px;
+            }
+
+            .newsTitle {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+
+
+
+        </style>
+
+        <div>
+            <iron-image src={{imagesrc}} fade sizing="cover">
+                <top-toolbar isshowback={{showback}}></top-toolbar>
+                <template is="dom-if" if="{{showTitle}}">
+                    <div class="newsTitle">
+                        <news-title logosrc={{logosrc}} title={{newstitle}}></news-title>
+                    </div>
+                </template>
+
+
+            </iron-image>
+        </div>
+    </template>
+
+    <script>
+        (function() {
+            Polymer({
+                is: "header-panel",
+
+                properties: {
+                    showback: {
+                        type: String,
+                        value: "no"
+                    },
+
+                    imagesrc: String,
+
+                    logosrc: String,
+
+                    newstitle: String,
+
+                    showtitle: {
+                        type: String,
+                        value: "no"
+                    }
+
+                },
+
+                showTitle: false,
+
+                ready: function () {
+                    if (this.showtitle == "yes") {
+                        this.showTitle = true
+                    }
+                }
+            })
+        }) ();
+    </script>
+</dom-module>

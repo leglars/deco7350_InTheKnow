@@ -7,6 +7,7 @@
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 
+
 <dom-module id="top-toolbar">
     <template>
         <style>
@@ -48,6 +49,11 @@
                 color: white;
             }
 
+            .logo {
+                margin-left: 20px;
+                margin-top: 8px;
+            }
+
 
 
         </style>
@@ -61,7 +67,7 @@
 
 
                 <template is="dom-if" if="{{showLogo}}">
-                    <p>In The Know <span>{{isshowback}}</span></p>
+                    <img class="logo middle" src="../../images/logo@48_white.png" />
                 </template>
 
             </div>
@@ -100,10 +106,12 @@
                 ready: function() {
                     if(this.isshowback == "yes") {
                         this.showBack = true;
-                        this.showLogo = false
+                        this.showLogo = false;
+                    }else{
+                        this.showLogo = true;
+                        this.showBack = false;
                     }
                 }
-
 
             })
         }) ();

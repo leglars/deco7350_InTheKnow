@@ -149,8 +149,14 @@ a.joingame:hover{
   text-align: center;
 }
 
-#card-list{
+
+#card-list {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+/*---------------- news page ----------------*/
+.wrap {
+  margin-top: 64px;
 }
