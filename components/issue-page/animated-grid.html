@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
 
 <dom-module id="animated-grid">
 
@@ -16,7 +18,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     :host {
       display: block;
-      background: #000;
+      background: white;
+      position: relative;
     }
 
     .tile {
@@ -31,13 +34,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       @apply(--layout-center-center);
     }
 
+    .tile>paper-material {
+      margin: 2% 3%;
+      width: 94%;
+      height: 96%;
+    }
+
     .tile:nth-of-type(1) {
       width: calc(100% / 3);
       height: calc(100% / 3 * 2);
     }
 
+    .tile:nth-of-type(1)>paper-material {
+      margin: 1% 1.5%;
+      width: 97%;
+      height: 98%;
+    }
+
     .tile:nth-of-type(4) {
       width: calc(100% / 3);
+    }
+
+    .tile:nth-of-type(4)>paper-material {
+      margin: 2% 1.5%;
+      width: 97%;
+      height: 96%;
     }
 
     .tile:nth-of-type(5) {
@@ -45,25 +66,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       height: calc(100% / 3 * 2);
     }
 
+    .tile:nth-of-type(5)>paper-material {
+      margin: 1% 1.5%;
+      width: 97%;
+      height: 98%;
+    }
+
     .tile:nth-of-type(8) {
       width: calc(100% / 3);
       height: calc(100% / 3);
     }
 
+    .tile:nth-of-type(8)>paper-material {
+      margin: 2% 1.5%;
+      width: 97%;
+      height: 96%;
+    }
+
     .tile:nth-of-type(9) {
       position: absolute;
-      top: calc(100% / 3 * 2);
-      left: 0;
-      width: calc(100% / 6);
-      height: calc(100% / 3);
+      top: calc(99% / 3 * 2);
+      left: 0.5%;
+      width: calc(99% / 6);
+      height: calc(99% / 3);
+    }
+
+    .tile:nth-of-type(9)>paper-material {
+      margin: 2% 3%;
+      width: 94%;
+      height: 96%;
     }
 
     .tile:nth-of-type(10) {
       position: absolute;
-      top: calc(100% / 3 * 2);
-      left: calc(100% / 6);;
-      width: calc(100% / 6);
-      height: calc(100% / 3);
+      top: calc(99% / 3 * 2);
+      left: calc(102% / 6);
+      width: calc(99% / 6);
+      height: calc(99% / 3);
+    }
+
+    .tile:nth-of-type(10)>paper-material {
+      margin: 2% 3%;
+      width: 94%;
+      height: 96%;
+    }
+
+    iron-image {
+      width: 100%;
+      height: 100%;
     }
 
     /*--- shared css ---*/
@@ -103,9 +153,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
 
     <template is="dom-repeat" items="[[config]]">
-      <div class$="[[_computeTileClass(item.color)]]">
-        <span>[[item.value]]</span>
-      </div>
+      <div class="tile"><paper-material >
+        <iron-image src={{item.url}} sizing="cover" fade ></iron-image>
+        <!--<span>[[item.value]]</span>-->
+      </paper-material></div>
     </template>
 
   </template>
@@ -119,7 +170,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     is: 'animated-grid',
 
     behaviors: [
-      Polymer.NeonSharedElementAnimatableBehavior
+      Polymer.NeonSharedElementAnimatableBehavior,
+      Polymer.NeonAnimatableBehavior
     ],
 
     properties: {
@@ -128,16 +180,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         type: Array,
         value: function() {
           return [
-            {value: 1, color: 'blue'},
-            {value: 2, color: 'red'},
-            {value: 3, color: 'blue'},
-            {value: 4, color: 'green'},
-            {value: 5, color: 'yellow'},
-            {value: 6, color: 'blue'},
-            {value: 7, color: 'red'},
-            {value: 8, color: 'green'},
-            {value: 9, color: 'yellow'},
-            {value: 10, color: 'red'}
+
+            {url: "images/news/issue1/1.jpg"},
+            {url: "images/news/issue2/2.png"},
+            {url: "images/news/issue3/3.jpg"},
+            {url: "images/news/issue4/4.jpg"},
+            {url: "images/news/issue5/5.jpg"},
+            {url: "images/news/issue6/6.jpg"},
+            {url: "images/news/issue7/7.jpg"},
+            {url: "images/news/issue8/8.jpg"},
+            {url: "images/news/issue9/9.jpg"},
+            {url: "images/news/issue10/10.jpg"}
+//            {value: 1, color: 'blue'},
+//            {value: 2, color: 'red'},
+//            {value: 3, color: 'blue'},
+//            {value: 4, color: 'green'},
+//            {value: 5, color: 'yellow'},
+//            {value: 6, color: 'blue'},
+//            {value: 7, color: 'red'},
+//            {value: 8, color: 'green'},
+//            {value: 9, color: 'yellow'},
+//            {value: 10, color: 'red'}
           ]
         }
       },
@@ -152,7 +215,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               transformFrom: 'translateY(100%)',
               transformTo: 'none',
               timing: {
-                delay: 50
+                delay: 3000
               }
             }]
           }
