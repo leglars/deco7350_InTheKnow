@@ -1,10 +1,12 @@
 [
   {
     "issue": "web firmwork",
+    "id": 1,
     "category": "Economic",
+    "issuePhoto": "",
     "articles": [
       {
-        "id": 1,
+        "articleId": 1,
         "title": "Have you heard about the Web Components revolution?",
         "author": "Eric",
         "description": "../images/avatar-01.svg",
@@ -28,7 +30,7 @@
         "comments": "url"
       },
       {
-        "id": 1,
+        "articleId": 2,
         "title": "Have you heard about the Web Components revolution?",
         "author": "Eric",
         "description": "../images/avatar-01.svg",
@@ -54,6 +56,84 @@
     ]
   },
   {
+    "issue": "web firmwork",
+    "id": 2,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
 
+    ]
+  },
+  {
+    "issue": "web firmwork",
+    "id": 3,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
+
+    ]
+  },
+  {
+    "issue": "web firmwork",
+    "id": 4,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
+
+    ]
+  },
+  {
+    "issue": "web firmwork",
+    "id": 5,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
+
+    ]
+  },
+  {
+    "issue": "web firmwork",
+    "id": 6,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
+
+    ]
+  },
+  {
+    "issue": "web firmwork",
+    "id": 7,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
+
+    ]
+  },
+  {
+    "issue": "web firmwork",
+    "id": 8,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
+
+    ]
+  },
+  {
+    "issue": "web firmwork",
+    "id": 9,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
+
+    ]
+  },
+  {
+    "issue": "web firmwork",
+    "id": 10,
+    "category": "Economic",
+    "issuePhoto": "",
+    "articles": [
+
+    ]
   }
 ]
