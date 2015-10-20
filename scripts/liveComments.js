@@ -49,6 +49,7 @@ window.addEventListener('load', function(){
 
         console.log("iam submit");
         var comment = $("#commentInput").val();
+        $("#commentInput").val("");
         console.log(comment);
         if(comment) {
             console.log("this is form danmaku file");
