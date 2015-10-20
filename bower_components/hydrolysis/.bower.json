@@ -28,6 +28,6 @@
     "commit": "a91f380f3418d2c6aa36c559c33b45ded13413cd"
   },
   "_source": "git://github.com/Polymer/hydrolysis.git",
-  "_target": "^1.11",
+  "_target": "^1.18",
   "_originalSource": "Polymer/hydrolysis"
 }

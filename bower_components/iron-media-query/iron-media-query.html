@@ -19,7 +19,7 @@ Example:
     <iron-media-query query="(min-width: 600px)" query-matches="{{queryMatches}}"></iron-media-query>
 
 @group Iron Elements
-@demo demo/user.html
+@demo demo/index.html
 @hero hero.svg
 @element iron-media-query
 -->
@@ -49,11 +49,21 @@ Example:
         type: String,
         observer: 'queryChanged'
       },
-
+      
+      /**
+       * @type {function(MediaQueryList)}
+       */ 
       _boundMQHandler: {
         value: function() {
           return this.queryHandler.bind(this);
         }
+      },
+      
+      /**
+       * @type {MediaQueryList}
+       */ 
+      _mq: {
+        value: null
       }
     },
 

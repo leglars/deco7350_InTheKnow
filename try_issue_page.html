@@ -1,10 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <title>In The Know</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+    <!--<meta name="generator" content="In The Know" />-->
+
+
+    <!--<link rel="icon" sizes="" href="">-->
+    <!--<link rel="shortcut icon" href="">-->
+
+    <!--&lt;!&ndash; build:css styles/main.css &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="styles/main.css">-->
+    <!--&lt;!&ndash; endbuild&ndash;&gt;-->
+
+
+
+    <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- will be replaced with elements/elements.vulcanized.html -->
+    <!--<link rel="import" href="components/elements.html">-->
+    <!-- endreplace-->
+
+    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animations.html">
+    <link rel="import" href="try-full-page.html">
+    <link rel="import" href="try_user_page.html">
+    <link rel="import" href="try-animated-grid.html">
+
+    <style>
+
+        body {
+            overflow: hidden;
+        }
+
+        neon-animated-pages {
+            height: 100%;
+        }
+
+    </style>
+
+    <style is="custom-style">
+
+        :root {
+            --color-one: #4dd0e1;
+            --color-two: #ff9800;
+        }
+
+    </style>
+
 </head>
-<body>
+<body class="fullbleed">
+
+<template is="dom-bind">
+
+    <neon-animated-pages id="pages" selected="0">
+        <try-animated-grid  on-circle-click="_onIssueClick"></try-animated-grid>
+        <try-user-page on-click="_onBackClick"></try-user-page>
+    </neon-animated-pages>
+
+</template>
+
+
+
+
+<script>
+
+//    document.addEventListener('WebComponentsReady', function() {
+//        document.querySelector('try-full-page').show();
+//    });
+
+    var scope = document.querySelector('template[is="dom-bind"]');
+
+    scope._onIssueClick = function(event) {
+        console.log("click circle");
+        this.$.pages.selected = 1;
+    };
+
+    scope._onBackClick = function(event) {
+        this.$.pages.selected = 0;
+    };
+
+
+</script>
 
 </body>
 </html>
