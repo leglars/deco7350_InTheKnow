@@ -185,6 +185,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               timing: {
                 delay: 3000
               }
+            }],
+
+            'exit': [{
+              name: 'hero-animation',
+              id: 'hero',
+              fromPage: this
+            }, {
+              name: 'cascaded-animation',
+              animation: 'scale-down-animation'
             }]
           }
         }
@@ -198,6 +207,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
       });
     },
+
+    listeners: {
+      'click': '_onClick'
+    },
+
+    _onClick: function(event) {
+      console.log("you reach the real tile animation");
+      var target = event.target;
+      if (target.classList.contains('tile')) {
+        // configure the page animation
+        this.sharedElements = {
+          'hero': target
+        };
+
+        var nodesToScale = [];
+        var tiles = Polymer.dom(this.root).querySelectorAll('.tile');
+        for (var node, index = 0; node = tiles[index]; index++) {
+          if (node !== event.target) {
+            nodesToScale.push(node);
+          }
+        }
+        this.animationConfig['exit'][1].nodes = nodesToScale;
+
+        this.fire('tile-click');
+      }
+    },
+
 
     _computeTileClass: function(color) {
       return 'tile ' + color + '-300';

@@ -85,9 +85,6 @@
             .card {
                 margin: 0 6%;
                 width: 88%;
-            }
-
-            .pink {
                 --paper-card-header-color: var(--paper-pink-500);
             }
         </style>
@@ -97,7 +94,7 @@
 
             <template is="dom-repeat" items="{{config}}">
                 <div class="cards post">
-                    <main-article-card heading={{item.heading}} class="card pink"
+                    <main-article-card heading={{item.heading}} class="card"
                                        image={{item.image}}>
                         <div class="card-content">
                             <span>{{item.description}}</span>
@@ -157,6 +154,28 @@
 
                             ]
 
+                        }
+                    },
+
+                    animationConfig: {
+                        value: function() {
+                            var cards = Polymer.dom(this.root).querySelectorAll('.card');
+                            var cardsArray = Array.prototype.slice.call(cards);
+                            return {
+                                'entry': [{
+                                    name: 'cascaded-animation',
+                                    animation: 'transform-animation',
+                                    transformFrom: 'translateY(100%)',
+                                    nodes: cardsArray
+                                }],
+
+                                'exit': [{
+                                    name: 'cascaded-animation',
+                                    animation: 'transform-animation',
+                                    transformTo: 'translateY(60vh)',
+                                    nodes: cardsArray
+                                }]
+                            };
                         }
                     }
                 }
