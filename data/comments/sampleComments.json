@@ -1,0 +1,35 @@
+[
+  {
+    "mode":7,
+    "x":150,
+    "y":175,
+    "alpha":{"from":1, "to":0},
+    "dur": 2000,
+    "text":"hello high level comments",
+    "stime":1000,
+    "size":25,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":150,
+    "y":300,
+    "alpha":{"from":1, "to":0},
+    "dur": 2000,
+    "text":"hello high level comments",
+    "stime":2000,
+    "size":25,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":300,
+    "y":175,
+    "alpha":{"from":1, "to":0},
+    "dur": 2000,
+    "text":"hello high level comments",
+    "stime":3000,
+    "size":25,
+    "color": 16711680
+  }
+]

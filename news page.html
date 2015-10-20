@@ -14,6 +14,7 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild-->
+
     <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
     <link rel="import" href="bower_components/webcomponentsjs/webcomponents.min.js">
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
@@ -26,6 +27,15 @@
     <!-- For shared styles, shared-styles.html import in elements.html -->
     <style is="custom-style" include="shared-styles"></style>
 
+    <!-- CommentCoreLibrary (//github.com/jabbany/CommentCoreLibrary) - Licensed under the MIT license-->
+    <!-- build: live comments module-->
+    <link rel="stylesheet" href="bower_components/comment-core-library/build/style.css" />
+    <script src="bower_components/comment-core-library/build/CommentCoreLibrary.js"></script>
+    <link rel="stylesheet" href="styles/live-comments.css" />
+    <!-- endbuild-->
+
+    <script src="lib/jquery/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -34,11 +44,26 @@
                               newstitle="Philippines battered as Typhoon Koppu barrels in"></header-panel>
 
 <div class="wrap">
-    <article-container>
-        Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae.
-        Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex,
-        ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
-    </article-container>
+    <div>
+        <article-container>
+            Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae.
+            Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex,
+            ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+        </article-container>
+    </div>
+
+    <div id='my-player' class='abp'>
+        <div id='my-comment-stage' class='container'></div>
+    </div>
+
+    <ul>
+        <li><a href="#" id="btnLoadTimeline">载入一个弹幕列表</a></li>
+        <li><a href="#" id="btnInsertTimeline">插入一个弹幕到弹幕列表</a></li>
+        <li><a href="#" id="btnTimer">启用/重置 定时器来告知播放器目前的播放位置</a> <span id="txPlayPos">0</span></li>
+    </ul>
+
+    <script src="scripts/liveComments.js"></script>
+
 </div>
 
 
