@@ -49,6 +49,7 @@ window.addEventListener('load', function(){
 
         console.log("iam submit");
         var comment = $("#commentInput").val();
+        $("#commentInput").val("");
         console.log(comment);
         if(comment) {
             console.log("this is form danmaku file");
@@ -66,6 +67,17 @@ window.addEventListener('load', function(){
                 "color":0xff0000
             };
             CM.insert(danmaku);
+        }
+    });
+
+    var toggle = document.querySelector("paper-toggle-button");
+    toggle.addEventListener('change', function () {
+        if (this.checked) {
+            CM.start()
+            $('#my-comment-stage').removeClass("hidden").fadeIn(200);
+        } else {
+            $('#my-comment-stage').fadeOut(500).addClass("hidden");
+            CM.stop()
         }
     });
 
