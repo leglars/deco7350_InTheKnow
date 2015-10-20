@@ -70,6 +70,17 @@ window.addEventListener('load', function(){
         }
     });
 
+    var toggle = document.querySelector("paper-toggle-button");
+    toggle.addEventListener('change', function () {
+        if (this.checked) {
+            CM.start()
+            $('#my-comment-stage').removeClass("hidden").fadeIn(200);
+        } else {
+            $('#my-comment-stage').fadeOut(500).addClass("hidden");
+            CM.stop()
+        }
+    });
+
 
 
     //q('btnTimer').addEventListener('click', function(e){
