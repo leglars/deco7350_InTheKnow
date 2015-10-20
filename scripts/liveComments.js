@@ -70,33 +70,6 @@ window.addEventListener('load', function(){
         }
     });
 
-    $.keydown(function(e) {
-        e.preventDefault();
-
-        if (e.which == 13) {
-            var comment = $("#commentInput").val();
-            $("#commentInput").val("");
-            console.log(comment);
-            if(comment) {
-                console.log("this is form danmaku file");
-                var showTime = playTime + 1000;
-
-                var danmaku = {
-                    "mode":7,
-                    "x":150,
-                    "y":175,
-                    "alpha": {"from": 1.0, "to":0.0},
-                    "dur": 2000,
-                    "text":comment,
-                    "stime":showTime,
-                    "size":30,
-                    "color":0xff0000
-                };
-                CM.insert(danmaku);
-            }
-        }
-    })
-
 
 
     //q('btnTimer').addEventListener('click', function(e){
