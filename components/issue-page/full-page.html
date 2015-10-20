@@ -202,18 +202,18 @@ Polymer({
     animationConfig: {
       type: Object,
       value: function() {
+        var nodeList = Polymer.dom(this.root).querySelectorAll('.tile');
+        var nodeArray = Array.prototype.slice.call(nodeList);
         return {
           'entry': [{
-            name: 'slide-down-animation',
-            node: this.$.toolbar
-          },{
             name: 'cascaded-animation',
             animation: 'transform-animation',
             transformFrom: 'translateY(100%)',
             transformTo: 'none',
             timing: {
               delay: 100
-            }
+            },
+            nodes: nodeArray
           }
 //            {
 //            animatable: this.$.grid,
@@ -233,13 +233,6 @@ Polymer({
       }
     }
 
-  },
-
-  attached: function() {
-    this.async(function() {
-      var nodeList = Polymer.dom(this.root).querySelectorAll('.tile');
-      this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
-    });
   },
 
   listeners: {
