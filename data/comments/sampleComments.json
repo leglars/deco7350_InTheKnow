@@ -2,12 +2,122 @@
   {
     "mode":7,
     "x":150,
-    "y":175,
+    "y":75,
     "alpha":{"from":1, "to":0},
-    "dur": 2000,
-    "text":"hello high level comments",
+    "dur": 10000,
+    "text":"^_^ Interesting news, but the description is bad",
     "stime":1000,
     "size":25,
+    "shadow": false,
+    "color": 16711680
+
+  },
+  {
+    "mode":7,
+    "x":140,
+    "y":120,
+    "alpha":{"from":1, "to":0},
+    "dur": 5000,
+    "text":"4000",
+    "stime":4000,
+    "size":25,
+    "shadow": false,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":340,
+    "y":185,
+    "alpha":{"from":1, "to":0},
+    "dur": 5000,
+    "text":"8000",
+    "stime":8000,
+    "size":25,
+    "shadow": false,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":150,
+    "y":260,
+    "alpha":{"from":1, "to":0},
+    "dur": 5000,
+    "text":"5000",
+    "stime":5000,
+    "size":25,
+    "shadow": false,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":150,
+    "y":400,
+    "alpha":{"from":1, "to":0},
+    "dur": 10000,
+    "text":"10000",
+    "stime":10000,
+    "size":25,
+    "shadow": false,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":110,
+    "y":520,
+    "alpha":{"from":1, "to":0},
+    "dur": 5000,
+    "text":"15000",
+    "stime":15000,
+    "size":25,
+    "shadow": false,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":110,
+    "y":310,
+    "alpha":{"from":1, "to":0},
+    "dur": 5000,
+    "text":"20000",
+    "stime":20000,
+    "size":25,
+    "shadow": false,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":250,
+    "y":360,
+    "alpha":{"from":1, "to":0},
+    "dur": 5000,
+    "text":"20000",
+    "stime":20000,
+    "size":25,
+    "shadow": false,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":210,
+    "y":290,
+    "alpha":{"from":1, "to":0},
+    "dur": 5000,
+    "text":"25000",
+    "stime":25000,
+    "size":25,
+    "shadow": false,
+    "color": 16711680
+  },
+  {
+    "mode":7,
+    "x":150,
+    "y":500,
+    "alpha":{"from":1, "to":0},
+    "dur": 5000,
+    "text":"28000",
+    "stime":28000,
+    "size":25,
+    "shadow": false,
     "color": 16711680
   },
   {
@@ -15,21 +125,12 @@
     "x":150,
     "y":300,
     "alpha":{"from":1, "to":0},
-    "dur": 2000,
-    "text":"hello high level comments",
+    "dur": 30000,
+    "text":"30000",
     "stime":2000,
     "size":25,
-    "color": 16711680
-  },
-  {
-    "mode":7,
-    "x":300,
-    "y":175,
-    "alpha":{"from":1, "to":0},
-    "dur": 2000,
-    "text":"hello high level comments",
-    "stime":3000,
-    "size":25,
+    "shadow": false,
     "color": 16711680
   }
+
 ]
