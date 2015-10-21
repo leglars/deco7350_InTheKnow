@@ -26,10 +26,17 @@
     <!-- For shared styles, shared-styles.html import in elements.html -->
     <style is="custom-style" include="shared-styles"></style>
 
+    <!-- CommentCoreLibrary (//github.com/jabbany/CommentCoreLibrary) - Licensed under the MIT license-->
+    <!-- build: live comments module-->
+    <link rel="stylesheet" href="../../bower_components/comment-core-library/build/style.css" />
+    <script src="../../bower_components/comment-core-library/build/CommentCoreLibrary.js"></script>
+    <link rel="stylesheet" href="../../styles/live-comments.css" />
+    <!-- endbuild-->
+
 </head>
 <body>
 
-<header-panel showback="no" imagesrc="../../images/news/issue1/image_1.jpg"
+<header-panel showback="no" imagesrc="../../images/news/issue1/title1/image_1.jpg"
               showtitle="yes" logosrc="../../images/publisherLogo/bbc.jpg"
               newstitle="Lamar Odom: Ex-NBA star 'found unconscious' in Nevada brothel"></header-panel>
 
@@ -41,8 +48,8 @@
         <p>Mr Odom, 35, has played basketball for Miami, Dallas and the Los Angeles Lakers and Clippers.
         He also played for the US in the 2004 Athens Olympics, winning the bronze medal.</p>
         <p>His condition is unknown but well-wishers tweeted their support following the news.</p>
-        <img src="../../images/news/issue1/image_2.jpg">
-        <img src="../../images/news/issue1/image_3.jpg">
+        <img src="../../images/news/issue1/title1/image_2.jpg">
+        <img src="../../images/news/issue1/title1/image_3.jpg">
         <p>Mr Odom, who was married to reality television star Khloe Kardashian, has long struggled with alcohol and drug addiction.</p>
         <p>He was involved in a drink-driving case in 2013 and was suspended from the NBA for violating its anti-drug policy in 2000.</p>
         <p>He and Ms Kardashian were married in 2009 in a ceremony that was taped for US television network E!.</p>
@@ -51,6 +58,14 @@
 
 
     </article-container>
+
+    <div id='my-player' class='abp'>
+        <div id='my-comment-stage' class='container'></div>
+    </div>
+
+    <ul>     <span id="txPlayPos">0</span>
+    </ul>
+    <script src="../../scripts/liveComments.js"></script>
 
 
 </div>
