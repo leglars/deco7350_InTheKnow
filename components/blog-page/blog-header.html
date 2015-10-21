@@ -1,0 +1,56 @@
+
+<link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
+
+
+<dom-module id="blog-header">
+    <template>
+        <style>
+
+            paper-toolbar.tall {
+                /* custom toolbar height */
+                height: 256px;
+                background-color: transparent;
+            }
+
+            paper-toolbar.tall .title {
+                font-size: 40px;
+                margin-left: 60px;
+
+                -webkit-transform-origin: left center;
+                transform-origin: left center;
+            }
+
+            .hidden {
+                visibility: hidden;
+            }
+
+        </style>
+
+            <paper-toolbar class="tall">
+
+                <paper-icon-button icon="arrow-back"></paper-icon-button>
+                <div id="scrollTitle" class="hidden">{{blogtitle}}</div>
+                <div class="flex"></div>
+                <paper-icon-button icon="search"></paper-icon-button>
+                <paper-icon-button icon="more-vert"></paper-icon-button>
+                <div class="bottom title">{{blogtitle}}</div>
+
+            </paper-toolbar>
+
+    </template>
+
+    <script>
+        (function () {
+            Polymer({
+                is: "blog-header",
+
+                properties: {
+                    blogtitle: {
+                        type:String,
+                        value: "Title"
+                    }
+                }
+            })
+        }) ()
+    </script>
+</dom-module>
