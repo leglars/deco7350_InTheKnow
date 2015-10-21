@@ -81,13 +81,13 @@
         <paper-material class="inputBar">
             <div class="inputContainer">
                 <div class="liveCommentToggle">
-                    <paper-toggle-button class="blue"></paper-toggle-button>
+                    <paper-toggle-button id="commentsToggle" class="blue" checked></paper-toggle-button>
                 </div>
                 <div class="inputField">
-                    <paper-textarea label="Add your live comment within 140 characters" char-counter maxlength="140"></paper-textarea>
+                    <paper-textarea id="commentInput" label="Add your live comment within 140 characters" char-counter maxlength="140"></paper-textarea>
                 </div>
                 <div class="SubmitButton">
-                    <paper-button tabindex="0" raised class="colorful">Submit</paper-button>
+                    <paper-button id="submit" tabindex="0" raised class="colorful">Submit</paper-button>
                 </div>
             </div>
         </paper-material>
