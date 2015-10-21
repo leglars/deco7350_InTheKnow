@@ -184,7 +184,7 @@ Custom property | Description | Default
         </div>
 
         <div class="card-content">
-            <span>{{description}}</span>
+            <content></content>
         </div>
         <div class="card-actions">
 
@@ -192,6 +192,10 @@ Custom property | Description | Default
 
             <paper-button id="dislike" tabindex="1" toggles raised active class="addValueButton"><iron-icon icon="thumb-down"></iron-icon> <span class="voteNum">{{dislike}}</span> </paper-button>
         </div>
+
+        <script src="../../lib/jquery/jquery.min.js"></script>
+        <script src="../../scripts/app.js"></script>
+
     </template>
 
 </dom-module>

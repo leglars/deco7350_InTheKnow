@@ -42,7 +42,8 @@
         </style>
 
         <div class="articleContainer">
-            <main-article-card class="card">
+            <main-article-card class="card" like={{like}}
+                                            dislike={{dislike}}>
                 <div class="article">
                     <content></content>
                 </div>
@@ -55,7 +56,9 @@
                 is: "article-container",
 
                 properties: {
+                    like: Number,
 
+                    dislike: Number
                 }
             });
         }) ();
