@@ -1,0 +1,220 @@
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+<link rel="import" href="main-article-card.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+
+
+<link rel="stylesheet" href="../../styles/main.css">
+
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+
+<link rel="stylesheet" type="text/css" href="../../assets/animate.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/demo.css" />
+
+<dom-module id="main-card-list-2">
+    <template >
+        <style>
+
+            #card-list {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1560px;
+
+                min-width: 601px;
+
+            }
+
+            @media (max-width: 1600px) {
+                #card-list {
+                    padding: 0 32px;
+                    transition: all 0.2s ease-in-out;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -moz-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
+                }
+            }
+
+            .cards {
+                display: inline-block;
+                float: left;
+                vertical-align: top;
+                width: calc(100% / 4);
+                height: auto;
+            }
+
+            @media (max-width: 1366px) {
+                .cards {
+                    width: calc(100% / 3);
+                    transition: all 0.2s ease-in-out;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -moz-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
+                }
+
+                #card-list {
+                    padding: 0 24px;
+                    transition: all 0.2s ease-in-out;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -moz-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
+                }
+            }
+
+            @media (max-width: 960px) {
+                .cards {
+                    width: calc(100% / 2);
+                    transition: all 0.2s ease-in-out;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -moz-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
+                }
+
+                #card-list {
+                    padding: 0 16px;
+                    transition: all 0.2s ease-in-out;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -moz-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
+                }
+            }
+
+            .card {
+                margin: 0 6%;
+                width: 88%;
+                --paper-card-header-color: var(--paper-pink-500);
+            }
+
+            .card_img{
+                width:100%;
+            }
+
+        </style>
+        <!--image="{{item.image}}"-->
+
+        <div id="card-list">
+
+            <template is="dom-repeat" items="{{config}}">
+                <div class="cards post">
+
+                    <main-article-card class="card"
+
+                                       like={{item.like}}
+                                       dislike={{item.dislike}}>
+                        <a href="{{item.link}}"><img class="card_img" src={{item.image}}></a>
+                        <span>{{item.description}}</span>
+                    </main-article-card>
+                </div>
+            </template>
+        </div>
+
+
+
+
+
+    </template>
+
+    <script>
+        (function() {
+            Polymer({
+                is:"main-card-list-2",
+
+                properties: {
+                    config: {
+                        type: Array,
+                        value: function() {
+                            return [
+
+                                {
+                                    heading: "Australia and Bernard Foley break Scotland hearts in World Cup drama",
+                                    image: "images/news/issue2/title3/titleabc.jpg",
+                                    link: "components/news_articles/abc_issue_2.html",
+                                    like: 164,
+                                    dislike: 40,
+                                    description: "The Wallabies have emerged from an enthralling Rugby World Cup quarter-final battle as 35-34 winners against a relentless Scotland outfit."
+                                },{
+                                    heading: "This is a long long long long title",
+                                    image: "images/news/issue2/title1/titlebbc.jpg",
+                                    link: "components/news_articles/bbc_issue_2.html",
+                                    like: 100,
+                                    dislike: 30,
+                                    description: "Scotland suffered a devastating loss as Australia won a thrilling quarter-final with a controversial late penalty."
+                                },{
+                                    heading: "This is a long long long long title",
+                                    image: "images/news/issue2/title2/titlecnn.jpg",
+                                    link: "components/news_articles/cnn_issue_2.html",
+                                    like: 64,
+                                    dislike: 50,
+                                    description: "Peter Horne went over to help the Scots to an early lead, but Michael Hooper, Drew Mitchell and Adam Ashley-Cooper all scored tries in the first half to narrow the gap to one point."
+                                },{
+                                    heading: "This is a long long long long title",
+                                    image: "images/news/issue2/title5/titlenyt.jpg",
+                                    link: "components/news_articles/nyt_issue_2.html",
+                                    like: 50,
+                                    dislike: 86,
+                                    description: "If history is any guide, Australia's last-gasp quarter-final win over Scotland could be the break the Wallabies needed to win the Rugby World Cup."
+                                },{
+                                    heading: "This is a long long long long title",
+                                    image: "images/news/issue2/title4/titleg.jpg",
+                                    link: "components/news_articles/guardian_issue_2.html",
+                                    like: 33,
+                                    dislike: 98,
+                                    description: "Australia are into the semi-finals but only by virtue of a disputed last-minute penalty kicked by Bernard Foley that will be debated everywhere from Sydney to the Shetland Isles for weeks, if not years, to come."
+                                },{
+                                    heading: "This is a long long long long title",
+                                    image: "images/news/issue2/title6/titleaust.jpg",
+                                    link: "components/news_articles/theaustralian_issue_2.html",
+                                    like: 13,
+                                    dislike: 114,
+                                    description: "BERNARD Foley reprised his role as the 'Iceman' by kicking a penalty in the 79th minute to help the Wallabies escape from jail against Scotland and qualify for the World Cup semi-finals."
+                                }
+
+
+
+                            ]
+
+                        }
+                    },
+
+                    animationConfig: {
+                        value: function() {
+                            var cards = Polymer.dom(this.root).querySelectorAll('.card');
+                            var cardsArray = Array.prototype.slice.call(cards);
+                            return {
+                                'entry': [{
+                                    name: 'cascaded-animation',
+                                    animation: 'transform-animation',
+                                    transformFrom: 'translateY(100%)',
+                                    nodes: cardsArray
+                                }],
+
+                                'exit': [{
+                                    name: 'cascaded-animation',
+                                    animation: 'transform-animation',
+                                    transformTo: 'translateY(60vh)',
+                                    nodes: cardsArray
+                                }]
+                            };
+                        }
+                    }
+                }
+            })
+        }) ();
+    </script>
+
+    <!--<script src="../../lib/jquery/jquery.min.js"></script>-->
+    <!--<script src="../../assets/viewportchecker.js"></script>-->
+    <!--<script type="text/javascript">-->
+        <!--jQuery(document).ready(function() {-->
+            <!--jQuery('.post').addClass("hidden").viewportChecker({-->
+                <!--classToAdd: 'visible animated fadeInDown', // Class to add to the elements when they are visible-->
+                <!--offset: 100-->
+            <!--});-->
+        <!--});-->
+    <!--</script>-->
+
+</dom-module>
