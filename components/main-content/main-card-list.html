@@ -88,17 +88,24 @@
                 width: 88%;
                 --paper-card-header-color: var(--paper-pink-500);
             }
-        </style>
 
+            .card_img{
+                width:100%;
+            }
+
+        </style>
+        <!--image="{{item.image}}"-->
 
         <div id="card-list">
 
             <template is="dom-repeat" items="{{config}}">
                 <div class="cards post">
+
                     <main-article-card class="card"
-                                       image={{item.image}}
+
                                        like={{item.like}}
                                        dislike={{item.dislike}}>
+                        <a href="{{item.link}}"><img class="card_img" src={{item.image}}></a>
                         <span>{{item.description}}</span>
                     </main-article-card>
                 </div>
