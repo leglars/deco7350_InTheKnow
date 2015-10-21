@@ -22,6 +22,5 @@ $(".addValueButton").click(function(event) {
 
     var text ="<span class='voteNum'>" +  newVoteNum.toString() + "</span>";
 
-
     vote.replaceWith(text)
     });
