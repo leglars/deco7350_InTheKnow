@@ -2,68 +2,25 @@
  * Created by Leglars on 2015/10/14.
  */
 
-(function(document) {
-    'use strict';
+$(".addValueButton").click(function(event) {
 
-    // Grab a reference to our auto-binding template
-    // and give it some initial binding values
-    // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
-    var app = document.querySelector('#app');
+    var curr = $( event.target );
+    if ( curr.is( "iron-icon" ) || curr.is( "span" ) ) {
+        curr = curr.parent();  //change target to paper-button
+    }
+    curr.prop("disabled", true);
+    var sibling;
+    if ( curr.attr("id") == "like") {
+        sibling = curr.next(); // dislike button
+    }else {
+        sibling = curr.prev(); // like button
+    }
+    sibling.prop("disabled", true).prop("active", false).attr("elevation", 0);
+    var vote = curr.children(".voteNum");
+    var oldVoteNum = vote.text();
+    var newVoteNum = Number(oldVoteNum) + 1;
 
-    app.displayInstalledToast = function() {
-        // Check to make sure caching is actually enabled¡ªit won't be in the dev environment.
-        if (!document.querySelector('platinum-sw-cache').disabled) {
-            document.querySelector('#caching-complete').show();
-        }
-    };
+    var text ="<span class='voteNum'>" +  newVoteNum.toString() + "</span>";
 
-    // Listen for template bound event to know when bindings
-    // have resolved and content has been stamped to the page
-    app.addEventListener('dom-change', function() {
-        console.log('Our app is ready to rock!');
+    vote.replaceWith(text)
     });
-
-    // See https://github.com/Polymer/polymer/issues/1381
-    window.addEventListener('WebComponentsReady', function() {
-        // imports are loaded and elements have been registered
-    });
-
-    // Main area's paper-scroll-header-panel custom condensing transformation of
-    // the appName in the middle-container and the bottom title in the bottom-container.
-    // The appName is moved to top and shrunk on condensing. The bottom sub title
-    // is shrunk to nothing on condensing.
-    addEventListener('paper-header-transform', function(e) {
-        var appName = document.querySelector('#mainToolbar .app-name');
-        var middleContainer = document.querySelector('#mainToolbar .middle-container');
-        var bottomContainer = document.querySelector('#mainToolbar .bottom-container');
-        var detail = e.detail;
-        var heightDiff = detail.height - detail.condensedHeight;
-        var yRatio = Math.min(1, detail.y / heightDiff);
-        var maxMiddleScale = 0.50;  // appName max size when condensed. The smaller the number the smaller the condensed size.
-        var scaleMiddle = Math.max(maxMiddleScale, (heightDiff - detail.y) / (heightDiff / (1-maxMiddleScale))  + maxMiddleScale);
-        var scaleBottom = 1 - yRatio;
-
-        // Move/translate middleContainer
-        Polymer.Base.transform('translate3d(0,' + yRatio * 100 + '%,0)', middleContainer);
-
-        // Scale bottomContainer and bottom sub title to nothing and back
-        Polymer.Base.transform('scale(' + scaleBottom + ') translateZ(0)', bottomContainer);
-
-        // Scale middleContainer appName
-        Polymer.Base.transform('scale(' + scaleMiddle + ') translateZ(0)', appName);
-    });
-
-    // Close drawer after menu item is selected if drawerPanel is narrow
-    app.onDataRouteClick = function() {
-        var drawerPanel = document.querySelector('#paperDrawerPanel');
-        if (drawerPanel.narrow) {
-            drawerPanel.closeDrawer();
-        }
-    };
-
-    // Scroll page to top and expand header
-    app.scrollPageToTop = function() {
-        document.getElementById('mainContainer').scrollTop = 0;
-    };
-
-})(document);
