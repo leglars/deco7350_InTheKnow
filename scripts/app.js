@@ -9,12 +9,19 @@ $(".addValueButton").click(function(event) {
         curr = curr.parent()
     }
     curr.prop("disabled", true);
-    var next = curr.children(".voteNum");
-    var oldVoteNum = next.text();
+    var sibling
+    if ( curr.attr("id") == "like") {
+        sibling = curr.next();
+    }else {
+        sibling = curr.prev();
+    }
+    sibling.prop("disabled", true).prop("active", false).attr("elevation", 0);
+    var vote = curr.children(".voteNum");
+    var oldVoteNum = vote.text();
     var newVoteNum = Number(oldVoteNum) + 1;
 
     var text ="<span class='voteNum'>" +  newVoteNum.toString() + "</span>";
 
 
-    next.replaceWith(text)
+    vote.replaceWith(text)
     });
