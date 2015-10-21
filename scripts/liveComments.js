@@ -31,7 +31,7 @@ window.addEventListener('load', function(){
     //    CM.insert(danmaku);
     //});
 
-    $.getJSON("data/comments/sampleComments.json", function(data) {
+    $.getJSON("../../data/comments/sampleComments.json", function(data) {
         CM.load(data)
     });
 
