@@ -5,15 +5,15 @@
 $(".addValueButton").click(function(event) {
 
     var curr = $( event.target );
-    if ( curr.is( "iron-icon" ) ) {
-        curr = curr.parent()
+    if ( curr.is( "iron-icon" ) || curr.is( "span" ) ) {
+        curr = curr.parent();  //change target to paper-button
     }
     curr.prop("disabled", true);
-    var sibling
+    var sibling;
     if ( curr.attr("id") == "like") {
-        sibling = curr.next();
+        sibling = curr.next(); // dislike button
     }else {
-        sibling = curr.prev();
+        sibling = curr.prev(); // like button
     }
     sibling.prop("disabled", true).prop("active", false).attr("elevation", 0);
     var vote = curr.children(".voteNum");
