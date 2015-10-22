@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animatable-behavior.html">
 <link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
+<link rel="stylesheet" href="../../bower_components/paper-styles/demo.css">
 <link rel="import" href="animated-grid.html">
 <link rel="import" href="../header/top-toolbar.html">
 
@@ -18,13 +19,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
 
     :host {
-      background: white;
+      background: #000000;
       visibility: hidden;
       @apply(--layout-vertical);
     }
 
     .toolbar {
-      background: #5d96b0;
+      background: #c67f69;
       height: 72px;
       z-index: 1;
       @apply(--shadow-elevation-2dp);
@@ -39,7 +40,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding: 0.5%;
       @apply(--layout-flex);
       display: block;
-      background: white;
+      background: rgba(49, 49, 49, 1);
       position: relative;
     }
 
@@ -135,7 +136,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     iron-image {
       width: 100%;
       height: 100%;
+      background-size: 100% 100%;
     }
+
+
 
   </style>
 
@@ -145,10 +149,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <div id="grid">
       <template is="dom-repeat" items="[[config]]">
-        <div class="tile"><paper-material >
-          <iron-image src={{item.url}} sizing="cover" fade ></iron-image>
-          <!--<span>[[item.value]]</span>-->
-        </paper-material></div>
+        <div class="tile">
+          <paper-material >
+            <a href={{item.link}}><iron-image src={{item.url}} sizing="none" fade ></iron-image></a>
+            <!--<span>[[item.value]]</span>-->
+          </paper-material>
+        </div>
       </template>
     </div>
 
@@ -175,16 +181,19 @@ Polymer({
       value: function() {
         return [
 
-          {url: "images/news/issue1/1.jpg"},
-          {url: "images/news/issue2/2.png"},
-          {url: "images/news/issue3/3.jpg"},
-          {url: "images/news/issue4/4.jpg"},
-          {url: "images/news/issue5/5.jpg"},
-          {url: "images/news/issue6/6.jpg"},
-          {url: "images/news/issue7/7.jpg"},
-          {url: "images/news/issue8/8.jpg"},
-          {url: "images/news/issue9/9.jpg"},
-          {url: "images/news/issue10/10.jpg"}
+          {url: "images/lamar.jpg",
+            link: "user.html"
+          },
+
+          {url: "images/joe.jpg"},
+          {url: "images/myth.jpg"},
+          {url: "images/texas.jpg"},
+          {url: "images/australia.jpg"},
+          {url: "images/freedom.jpg"},
+          {url: "images/weights.jpg"},
+          {url: "images/germany.jpg"},
+          {url: "images/drugs.jpg"},
+          {url: "images/plans.jpg"}
 //            {value: 1, color: 'blue'},
 //            {value: 2, color: 'red'},
 //            {value: 3, color: 'blue'},
