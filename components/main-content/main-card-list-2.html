@@ -123,6 +123,11 @@
             Polymer({
                 is:"main-card-list-2",
 
+                behaviors: [
+                    Polymer.NeonSharedElementAnimatableBehavior,
+                    Polymer.NeonAnimatableBehavior
+                ],
+
                 properties: {
                     config: {
                         type: Array,
@@ -180,27 +185,52 @@
                         }
                     },
 
+
                     animationConfig: {
+                        type: Object,
                         value: function() {
-                            var cards = Polymer.dom(this.root).querySelectorAll('.card');
-                            var cardsArray = Array.prototype.slice.call(cards);
                             return {
                                 'entry': [{
                                     name: 'cascaded-animation',
                                     animation: 'transform-animation',
                                     transformFrom: 'translateY(100%)',
-                                    nodes: cardsArray
-                                }],
-
-                                'exit': [{
-                                    name: 'cascaded-animation',
-                                    animation: 'transform-animation',
-                                    transformTo: 'translateY(60vh)',
-                                    nodes: cardsArray
+                                    transformTo: 'none',
+                                    timing: {
+                                        delay: 100
+                                    }
                                 }]
-                            };
+                            }
                         }
                     }
+
+                    // animationConfig: {
+                    //     value: function() {
+                    //         var cards = Polymer.dom(this.root).querySelectorAll('.card');
+                    //         var cardsArray = Array.prototype.slice.call(cards);
+                    //         return {
+                    //             'entry': [{
+                    //                 name: 'cascaded-animation',
+                    //                 animation: 'transform-animation',
+                    //                 transformFrom: 'translateY(100%)',
+                    //                 nodes: cardsArray
+                    //             }],
+
+                    //             'exit': [{
+                    //                 name: 'cascaded-animation',
+                    //                 animation: 'transform-animation',
+                    //                 transformTo: 'translateY(60vh)',
+                    //                 nodes: cardsArray
+                    //             }]
+                    //         };
+                    //     }
+                    // }
+                },
+
+                attached: function() {
+                    this.async(function() {
+                        var cards = Polymer.dom(this.root).querySelectorAll('.cards');
+                        this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(cards);
+                    });
                 }
             })
         }) ();
