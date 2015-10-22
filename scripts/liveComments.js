@@ -46,16 +46,18 @@ window.addEventListener('load', function(){
 
     $("#submit").click(function(e) {
         e.preventDefault();
-
-        console.log("iam submit");
+        var pageY = e.pageY;
+        var screenWidth = e.screenX;
+        var screenHeight = e.screenY;
+        console.log(pageY, screenWidth, screenHeight);
         var comment = $("#commentInput").val();
         $("#commentInput").val("");
         console.log(comment);
         if(comment) {
             console.log("this is form danmaku file");
             var showTime = playTime + 1000;
-            var x = Math.round(((Math.random()*10) * 100), 0); // x = (100-1000)
-            var y = Math.round(((Math.random()* 7) * 100 - 50), 0); // y = (50 - 650)
+            var x = Math.round((Math.random()*screenWidth - 100), 0) * 0.9; // x = (100-1000)
+            var y = ((pageY - 600) - Math.round((Math.random()*screenHeight - 50), 0)) * 0.9; // y = (50 - 650)
             console.log(x, y);
             var danmaku = {
                 "mode":7,
@@ -103,12 +105,12 @@ window.addEventListener('load', function(){
     window.CM = CM;
 });
 
-$(document).scroll( function () {
-        var scrollValue = $("body#issueArticle").scrollTop();
-        //console.log(scrollValue);
-        if (scrollValue < 500) {
-            var newTopValue = 500-scrollValue;
-            $(".abp").css("top", newTopValue);
-        }
-    });
+//$(document).scroll( function () {
+//        var scrollValue = $("body#issueArticle").scrollTop();
+//        //console.log(scrollValue);
+//        if (scrollValue < 500) {
+//            var newTopValue = 500-scrollValue;
+//            $(".abp").css("top", newTopValue);
+//        }
+//    });
 
