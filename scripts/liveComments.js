@@ -41,7 +41,7 @@ window.addEventListener('load', function(){
     iVal = setInterval(function(){
         playTime = Date.now() - startTime; // 用起始时间和现在时间的差模拟播放
         CM.time(playTime); // 通报播放时间
-        q('txPlayPos').textContent = playTime; // 显示播放时间
+        // q('txPlayPos').textContent = playTime; // 显示播放时间
     }, 100); // 模拟播放器每 100ms 通报播放时间
 
     $("#submit").click(function(e) {
@@ -54,11 +54,13 @@ window.addEventListener('load', function(){
         if(comment) {
             console.log("this is form danmaku file");
             var showTime = playTime + 1000;
-
+            var x = Math.round(((Math.random()*10) * 100), 0); // x = (100-1000)
+            var y = Math.round(((Math.random()* 7) * 100 - 50), 0); // y = (50 - 650)
+            console.log(x, y);
             var danmaku = {
                 "mode":7,
-                "x":150,
-                "y":175,
+                "x":x,
+                "y":y,
                 "alpha": {"from": 1.0, "to":0.0},
                 "dur": 2000,
                 "text":comment,
@@ -100,3 +102,13 @@ window.addEventListener('load', function(){
     // 开放 CM 对象到全局这样就可以在 console 终端里操控
     window.CM = CM;
 });
+
+$(document).scroll( function () {
+        var scrollValue = $("body#issueArticle").scrollTop();
+        //console.log(scrollValue);
+        if (scrollValue < 500) {
+            var newTopValue = 500-scrollValue;
+            $(".abp").css("top", newTopValue);
+        }
+    });
+
