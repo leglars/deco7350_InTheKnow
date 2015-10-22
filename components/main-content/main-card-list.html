@@ -92,6 +92,7 @@
             .card_img{
                 width:100%;
             }
+            
 
         </style>
         <!--image="{{item.image}}"-->
@@ -119,6 +120,11 @@
         (function() {
             Polymer({
                 is:"main-card-list",
+
+                behaviors: [
+                    Polymer.NeonSharedElementAnimatableBehavior,
+                    Polymer.NeonAnimatableBehavior
+                ],
 
                 properties: {
                     config: {
@@ -168,7 +174,7 @@
                                     like: 13,
                                     dislike: 114,
                                     description: "US basketball and reality TV star Lamar Odom is fighting for life in hospital after he was found unconscious at a brothel."
-                                },
+                                }
 
 
 
@@ -178,40 +184,55 @@
                     },
 
                     animationConfig: {
+                        type: Object,
                         value: function() {
-                            var cards = Polymer.dom(this.root).querySelectorAll('.card');
-                            var cardsArray = Array.prototype.slice.call(cards);
                             return {
                                 'entry': [{
                                     name: 'cascaded-animation',
                                     animation: 'transform-animation',
                                     transformFrom: 'translateY(100%)',
-                                    nodes: cardsArray
-                                }],
-
-                                'exit': [{
-                                    name: 'cascaded-animation',
-                                    animation: 'transform-animation',
-                                    transformTo: 'translateY(60vh)',
-                                    nodes: cardsArray
+                                    transformTo: 'none',
+                                    timing: {
+                                        delay: 100
+                                    }
                                 }]
-                            };
+                            }
                         }
                     }
+
+
+
+//                    animationConfig: {
+//                        value: function() {
+//                            var cards = Polymer.dom(this.root).querySelectorAll('.card');
+//                            var cardsArray = Array.prototype.slice.call(cards);
+//                            return {
+//                                'entry': [{
+//                                    name: 'cascaded-animation',
+//                                    animation: 'transform-animation',
+//                                    transformFrom: 'translateY(100%)',
+//                                    nodes: cardsArray
+//                                }],
+//
+//                                'exit': [{
+//                                    name: 'cascaded-animation',
+//                                    animation: 'transform-animation',
+//                                    transformTo: 'translateY(60vh)',
+//                                    nodes: cardsArray
+//                                }]
+//                            };
+//                        }
+//                    }
+                },
+
+                attached: function() {
+                    this.async(function() {
+                        var cards = Polymer.dom(this.root).querySelectorAll('.cards');
+                        this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(cards);
+                    });
                 }
             })
         }) ();
     </script>
-
-    <!--<script src="../../lib/jquery/jquery.min.js"></script>-->
-    <!--<script src="../../assets/viewportchecker.js"></script>-->
-    <!--<script type="text/javascript">-->
-        <!--jQuery(document).ready(function() {-->
-            <!--jQuery('.post').addClass("hidden").viewportChecker({-->
-                <!--classToAdd: 'visible animated fadeInDown', // Class to add to the elements when they are visible-->
-                <!--offset: 100-->
-            <!--});-->
-        <!--});-->
-    <!--</script>-->
 
 </dom-module>

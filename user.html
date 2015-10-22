@@ -29,15 +29,30 @@
     <style is="custom-style" include="shared-styles"></style>
 
 </head>
-<body>
-<header-panel showback="yes" backurl="issue%20page.html"
-              imagesrc="images/issue1.jpg"
-              showtitle="yes"
-              newstitle="LAMAR ODOM FOUND UNCONSCIOUS"></header-panel>
+<body class="fullbleed relative">
 
-<main-card-list></main-card-list>
+    <full-issue-article-page class="fit"></full-issue-article-page>
 
-<script src="scripts/app.js"></script>
+    <script>
+
+        document.addEventListener('WebComponentsReady', function() {
+            document.querySelector('full-issue-article-page').show();
+        });
+
+    </script>
+
+    <script src="scripts/app.js"></script>
+    <script src="assets/viewportchecker.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.post').addClass("hidden").viewportChecker({
+                classToAdd: 'visible animated fadeInDown', // Class to add to the elements when they are visible
+                offset: 100
+            });
+        });
+    </script>
+
+
 
 
 
