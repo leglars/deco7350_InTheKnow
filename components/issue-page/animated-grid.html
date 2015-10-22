@@ -114,6 +114,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     iron-image {
       width: 100%;
       height: 100%;
+      background-size: 100% 100%;
     }
 
   </style>
@@ -122,7 +123,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <template is="dom-repeat" items="[[config]]">
       <div class="tile"><paper-material >
-        <iron-image src={{item.url}} sizing="cover" fade ></iron-image>
+        <a href={{item.link}}><iron-image src={{item.url}} sizing="none" fade ></iron-image></a>
         <!--<span>[[item.value]]</span>-->
       </paper-material></div>
     </template>
@@ -149,16 +150,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: function() {
           return [
 
-            {url: "images/news/issue1/1.jpg"},
-            {url: "images/news/issue2/2.png"},
-            {url: "images/news/issue3/3.jpg"},
-            {url: "images/news/issue4/4.jpg"},
-            {url: "images/news/issue5/5.jpg"},
-            {url: "images/news/issue6/6.jpg"},
-            {url: "images/news/issue7/7.jpg"},
-            {url: "images/news/issue8/8.jpg"},
-            {url: "images/news/issue9/9.jpg"},
-            {url: "images/news/issue10/10.jpg"}
+            {url: "images/lamar.jpg",
+              link: "user.html"
+            },
+
+            {url: "images/joe.jpg",
+              link: "under construction.html"},
+            {url: "images/myth.jpg"},
+            {url: "images/texas.jpg"},
+            {url: "images/australia.jpg",
+            link: "user2.html"},
+            {url: "images/freedom.jpg"},
+            {url: "images/weights.jpg"},
+            {url: "images/germany.jpg"},
+            {url: "images/drugs.jpg"},
+            {url: "images/plans.jpg"}
           ]
         }
       },
