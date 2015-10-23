@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In The Know</title>
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
+    <meta name="generator" content="In The Know" />
+
+    <meta name="application-name" content="In The Know">
+
+    <link rel="icon" sizes="" href="">
+    <link rel="shortcut icon" href="">
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild-->
+
+    <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+    <link rel="import" href="bower_components/webcomponentsjs/webcomponents.min.js">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- endbuild -->
+
+    <!-- will be replaced with elements/elements.vulcanized.html -->
+    <link rel="import" href="components/elements.html">
+    <!-- endreplace-->
+
+    <!-- For shared styles, shared-styles.html import in elements.html -->
+    <style is="custom-style" include="shared-styles"></style>
+
+</head>
+<body class="fullbleed relative">
+
+    <full-issue-article-page-2 class="fit"></full-issue-article-page-2>
+
+    <script>
+
+        document.addEventListener('WebComponentsReady', function() {
+            document.querySelector('full-issue-article-page-2').show();
+        });
+
+    </script>
+
+    <script src="scripts/app.js"></script>
+    <script src="assets/viewportchecker.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.post').addClass("hidden").viewportChecker({
+                classToAdd: 'visible animated fadeInDown', // Class to add to the elements when they are visible
+                offset: 100
+            });
+        });
+    </script>
+
+
+
+
+
+</body>
+</html>

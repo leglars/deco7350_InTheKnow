@@ -59,26 +59,28 @@
         </style>
 
 
+
+
+        <paper-toolbar>
             <div class="leftIcon">
 
                 <template is="dom-if" if="{{showBack}}">
-                    <paper-icon-button icon="arrow-back" alt="arrow-back" title="arrow-back" class="huge white middle"></paper-icon-button>
+                    <a href={{backurl}}><paper-icon-button icon="arrow-back" alt="arrow-back" title="arrow-back" class="huge white middle"></paper-icon-button></a>
                 </template>
 
 
                 <template is="dom-if" if="{{showLogo}}">
-                    <img class="logo middle" src="../../images/logo_top.png" />
+                    <a href="../../index.html"><img class="logo middle" src="../../images/logo_top.png" /></a>
                 </template>
 
             </div>
-
-        <paper-toolbar justify="end">
+            <div class="flex"></div>
 
             <paper-tabs selected="0" noink no-bar>
                 <paper-tab>Home</paper-tab>
                 <paper-tab>About</paper-tab>
                 <paper-tab>Donate</paper-tab>
-                <paper-tab>Join Us</paper-tab>
+                <paper-tab>Blog</paper-tab>
                 <paper-tab disabled></paper-tab>
                 <paper-tab>Sign up</paper-tab>
                 <paper-tab>Log in</paper-tab>
@@ -97,7 +99,9 @@
                     isshowback: {
                         type: String,
                         value: "no"
-                    }
+                    },
+
+                    backurl: String
                 },
 
                 showBack: false,

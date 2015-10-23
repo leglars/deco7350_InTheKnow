@@ -114,6 +114,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     iron-image {
       width: 100%;
       height: 100%;
+      background-size: 100% 100%;
     }
 
   </style>
@@ -122,7 +123,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <template is="dom-repeat" items="[[config]]">
       <div class="tile"><paper-material >
-        <iron-image src={{item.url}} sizing="cover" fade ></iron-image>
+        <a href={{item.link}}><iron-image src={{item.url}} sizing="none" fade ></iron-image></a>
         <!--<span>[[item.value]]</span>-->
       </paper-material></div>
     </template>
@@ -149,26 +150,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: function() {
           return [
 
-            {url: "images/news/issue1/1.jpg"},
-            {url: "images/news/issue2/2.png"},
-            {url: "images/news/issue3/3.jpg"},
-            {url: "images/news/issue4/4.jpg"},
-            {url: "images/news/issue5/5.jpg"},
-            {url: "images/news/issue6/6.jpg"},
-            {url: "images/news/issue7/7.jpg"},
-            {url: "images/news/issue8/8.jpg"},
-            {url: "images/news/issue9/9.jpg"},
-            {url: "images/news/issue10/10.jpg"}
-//            {value: 1, color: 'blue'},
-//            {value: 2, color: 'red'},
-//            {value: 3, color: 'blue'},
-//            {value: 4, color: 'green'},
-//            {value: 5, color: 'yellow'},
-//            {value: 6, color: 'blue'},
-//            {value: 7, color: 'red'},
-//            {value: 8, color: 'green'},
-//            {value: 9, color: 'yellow'},
-//            {value: 10, color: 'red'}
+            {url: "images/lamar.jpg",
+              link: "user.html"
+            },
+
+            {url: "images/joe.jpg",
+              link: "under construction.html"},
+            {url: "images/myth.jpg",
+              link: "under construction.html"},
+            {url: "images/texas.jpg",
+              link: "under construction.html"},
+            {url: "images/australia.jpg",
+            link: "user2.html"},
+            {url: "images/freedom.jpg",
+              link: "under construction.html"},
+            {url: "images/weights.jpg",
+              link: "under construction.html"},
+            {url: "images/germany.jpg",
+              link: "under construction.html"},
+            {url: "images/drugs.jpg",
+              link: "under construction.html"},
+            {url: "images/plans.jpg",
+              link: "under construction.html"}
           ]
         }
       },
@@ -185,15 +188,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               timing: {
                 delay: 100
               }
-            }],
-
-            'exit': [{
-              name: 'hero-animation',
-              id: 'hero',
-              fromPage: this
-            }, {
-              name: 'cascaded-animation',
-              animation: 'scale-down-animation'
             }]
           }
         }
@@ -206,32 +200,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var nodeList = Polymer.dom(this.root).querySelectorAll('.tile');
         this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
       });
-    },
-
-    listeners: {
-      'click': '_onClick'
-    },
-
-    _onClick: function(event) {
-      console.log("you reach the real tile animation");
-      var target = event.target;
-      if (target.classList.contains('tile')) {
-        // configure the page animation
-        this.sharedElements = {
-          'hero': target
-        };
-
-        var nodesToScale = [];
-        var tiles = Polymer.dom(this.root).querySelectorAll('.tile');
-        for (var node, index = 0; node = tiles[index]; index++) {
-          if (node !== event.target) {
-            nodesToScale.push(node);
-          }
-        }
-        this.animationConfig['exit'][1].nodes = nodesToScale;
-
-        this.fire('tile-click');
-      }
     },
 
 
