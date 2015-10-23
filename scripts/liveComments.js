@@ -56,8 +56,8 @@ window.addEventListener('load', function(){
         if(comment) {
             console.log("this is form danmaku file");
             var showTime = playTime + 1000;
-            var x = Math.round((Math.random()*screenWidth - 100), 0) * 0.9; // x = (100-1000)
-            var y = ((pageY - 600) - Math.round((Math.random()*screenHeight - 50), 0)) * 0.9; // y = (50 - 650)
+            var x = Math.abs(Math.round(((Math.random()*screenWidth - 100) * 0.9), 0)); // x = (100-1000)
+            var y = Math.abs((pageY - 600) - Math.round(((Math.random()*screenHeight + 150) * 0.9), 0)); // y = (50 - 650)
             console.log(x, y);
             var danmaku = {
                 "mode":7,
